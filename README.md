@@ -6,4 +6,8 @@ Nama: [Theresa Alpansi]<br>
 NIM: [2622500056]<br>
 Kelompok: [PWD-SI1J]<br>
 Tahun Ajaran: 2026/2027 semester Gasal<br><br>
+<<<<<<< HEAD
 ![logo ISBAL](logoisbal.png)
+=======
+![logo ISBAL](logoisbal.png)
+>>>>>>> 94b0b5c704758f6d08a2ce99bbb727be53c9506b
