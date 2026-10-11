@@ -4,119 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profil Mahasiswa</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
   
-  <!-- KODE WARNA DAN  TAMPILAN (CSS) ADA DI SINI -->
-  <style>
-    body {
-      background-color: #f1f5f9;
-      font-family: Arial, sans-serif;
-      color: #333333;
-      margin: 0;
-      padding: 20px;
-    }
+  <!-- CSS Dasar Pertemuan 3 -->
+  <link rel="stylesheet" href="style.css" />
 
-    header {
-      background-color: #003366;
-      color: #ffffff;
-      padding: 15px 20px;
-      border-radius: 6px;
-    }
-    header h1 {
-      margin: 0 0 10px 0;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    nav ul li {
-      display: inline;
-      margin-right: 15px;
-    }
-    nav ul li a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    #home {
-      background-color: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    #about {
-      background-color: #ffffff;
-      border: 1px solid #d0d7de;
-      border-radius: 6px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-    #about h2 {
-      color: #003366;
-      border-bottom: 2px solid #003366;
-      padding-bottom: 6px;
-      margin-top: 0;
-    }
-    #about h3 {
-      color: #1f4e78;
-    }
-
-    #contact {
-      background-color: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-    #contact h2 {
-      color: #003366;
-      border-bottom: 2px solid #003366;
-      padding-bottom: 6px;
-      margin-top: 0;
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    #contact label {
-      color: #1f2937;
-      font-weight: bold;
-    }
-
-    .input-form {
-      background-color: #f8fafc;
-      color: #111827;
-      font-size: 14px;
-      padding: 8px 10px;
-      margin-top: 4px;
-      border: 1px solid #94a3b8;
-      border-radius: 4px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    #contact button {
-      background-color: #003366;
-      color: #ffffff;
-      font-weight: bold;
-      padding: 10px 18px;
-      margin-top: 10px;
-      margin-right: 8px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 10px;
-      color: #64748b;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -133,8 +24,9 @@
   <main>
     <section id="home">
       <h2>Selamat Datang</h2>
-      <p>Halo, saya Theresa Alpansi. Saya sedang mempelajari Pemrograman Web Dasar.</p>
+      <p>Halo, saya 2622500056 Theresa Alpansi. Saya sedang mempelajari Pemrograman Web Dasar.</p>
       <img src="img/foto-profil.jpeg" alt="Foto profil Theresa Alpansi" width="150" />
+
     </section>
 
     <section id="about">
@@ -151,13 +43,15 @@
       </article>
     </section>
 
+    <!-- Section Contact dengan Formulir HTML -->
     <section id="contact">
       <h2>Kontak</h2>
       <p>Kunjungi <a href="https://github.com/2622500056-theresa">profil GitHub saya</a>.</p>
       
       <form action="index.html" method="get">
+        <!-- Input Text -->
         <div class="form-group">
-          <label for="nama">Nama lengkap</label><br />
+          <label for="nama">Nama Lengkap</label><br />
           <input
             class="input-form"
             type="text"
@@ -170,6 +64,7 @@
           />
         </div>
 
+        <!-- Input Email -->
         <div class="form-group">
           <label for="email">Email</label><br />
           <input 
@@ -182,6 +77,7 @@
           />
         </div>
 
+        <!-- Input Number -->
         <div class="form-group">
           <label for="semester">Semester</label><br />
           <input 
@@ -195,6 +91,7 @@
           />
         </div>
 
+        <!-- Input Date -->
         <div class="form-group">
           <label for="tanggal">Tanggal Kunjungan</label><br />
           <input 
@@ -206,6 +103,7 @@
           />
         </div>
 
+        <!-- Input Radio -->
         <div class="form-group">
           <p>Jenis Pesan</p>
           <input type="radio" id="pertanyaan" name="jenis_pesan" value="pertanyaan" required />
@@ -214,6 +112,7 @@
           <label for="saran">Saran</label>
         </div>
 
+        <!-- Input Checkbox -->
         <div class="form-group">
           <p>Topik yang Diminati</p>
           <input type="checkbox" id="minat-html" name="minat" value="HTML" />
@@ -222,6 +121,7 @@
           <label for="minat-css">CSS</label>
         </div>
 
+        <!-- Select / Dropdown -->
         <div class="form-group">
           <label for="prodi">Program Studi</label><br />
           <select class="input-form" id="prodi" name="prodi" required>
@@ -231,6 +131,7 @@
           </select>
         </div>
 
+        <!-- Textarea -->
         <div class="form-group">
           <label for="pesan">Pesan</label><br />
           <textarea
@@ -250,7 +151,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Theresa Alpansi- 2622500056</p>
+    <p>&copy; 2026 Theresa Alpansi - 2622500056</p>
   </footer>
 </body>
-</html>
+  </html>
