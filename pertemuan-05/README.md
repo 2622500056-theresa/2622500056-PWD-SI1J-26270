@@ -39,4 +39,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Tambahkan penanganan event submit dan validasi formulir: Menambahkan logika validasi untuk semua field formulir beserta preventDefault. Umpan balik ditampilkan sesuai hasil validasi.
 
+<<<<<<< HEAD
 - Tambahkan penanganan event input dan reset: Membersihkan pesan umpan balik saat pengguna mengubah input atau mereset formulir. Pengujian ulang seluruh alur validasi sudah dilakukan.
+=======
+- Tambahkan penanganan event input dan reset: Membersihkan pesan umpan balik saat pengguna mengubah input atau mereset formulir. Pengujian ulang seluruh alur validasi sudah dilakukan.
+>>>>>>> 69758959afab4ab8008c69d5adfa88cc82a44eda
