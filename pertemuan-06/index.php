@@ -1,3 +1,14 @@
+<?php
+// Pengujian awal eksekusi PHP
+print "Keluaran menggunakan print.";
+
+
+/*
+Komentar beberapa baris.
+Komentar ini tidak ditampilkan pada halaman,
+*/
+?>
+
 <!doctype html>
 <html lang="id">
 
