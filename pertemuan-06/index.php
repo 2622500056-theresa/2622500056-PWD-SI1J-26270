@@ -6,7 +6,7 @@ $nim = "2622500056";
 $namaMahasiswa = "Theresa Alpansi";
 $programStudi = "SI";
 $tahunAkademik = "2026/2027";
-$semester = 2;
+$semester = 1;
 $ipk = 3.75;
 $statusAktif = true;
 $catatanTambahan = null;
@@ -60,6 +60,7 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,7 +98,8 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
             <h2>Selamat Datang</h2>
 
             <p>
-                Halo, saya <strong><?= htmlspecialchars($namaMahasiswa) ?></strong>.
+                Halo, saya
+                <strong><?= htmlspecialchars($namaMahasiswa) ?></strong>.
                 Saya sedang mempelajari mata kuliah
                 <strong><?= htmlspecialchars(NAMA_MATA_KULIAH) ?></strong>
                 pada tahun akademik
@@ -117,13 +119,42 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
             <article>
                 <h3>Profil Singkat</h3>
 
-                <p>Sisa semester hingga batas: <?= $sisaSemester ?></p>
-                <p>Pemeriksaan rentang semester: <?= $statusSemester ?></p>
-                <p>Semester: <?= $semester ?> (<?= $keteranganSemester ?>)</p>
-                <p>Program Studi: <?= $namaProdi ?> (<?= $programStudi ?>)</p>
-                <p>Status mahasiswa: <?= $teksStatus ?></p>
-                <p>Fokus program studi: <?= $fokusProgramStudi ?></p>
-                <p>IPK: <?= number_format($ipk, 2, ',', '.') ?></p>
+                <p>
+                    Sisa semester hingga batas:
+                    <?= $sisaSemester ?>
+                </p>
+
+                <p>
+                    Pemeriksaan rentang semester:
+                    <?= $statusSemester ?>
+                </p>
+
+                <p>
+                    Semester:
+                    <?= $semester ?>
+                    (<?= $keteranganSemester ?>)
+                </p>
+
+                <p>
+                    Program Studi:
+                    <?= htmlspecialchars($namaProdi) ?>
+                    (<?= htmlspecialchars($programStudi) ?>)
+                </p>
+
+                <p>
+                    Status mahasiswa:
+                    <?= htmlspecialchars($teksStatus) ?>
+                </p>
+
+                <p>
+                    Fokus program studi:
+                    <?= htmlspecialchars($fokusProgramStudi) ?>
+                </p>
+
+                <p>
+                    IPK:
+                    <?= number_format($ipk, 2, ',', '.') ?>
+                </p>
 
                 <p>
                     Catatan tambahan:
@@ -331,4 +362,5 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
 
     <script src="script.js"></script>
 </body>
+
 </html>
