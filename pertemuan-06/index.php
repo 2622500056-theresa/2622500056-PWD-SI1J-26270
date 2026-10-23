@@ -227,7 +227,7 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
             <p>
                 Kunjungi
                 <a
-                    href="https://github.com/<?= rawurlencode(PROFIL_GITHUB) ?>"
+                    href="https://github.com/2622500056-theresa/2622500056-PWD-SI1J-26270<?= rawurlencode(PROFIL_GITHUB) ?>"
                     target="_blank"
                     rel="noopener noreferrer">
                     profil GitHub saya
