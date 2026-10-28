@@ -13,4 +13,8 @@ Saya juga akan membuat dokumentasi pada file pertemuan - 06/README.md yang beris
 
 Melalui praktikum ini, saya berharap dapat lebih memahami dasar-dasar PHP dan mampu menerapkannya dalam pengembangan halaman web dinamis. Saya juga ingin membiasakan diri dalam melakukan pengujian, memperbaiki kesalahan program, membuat dokumentasi, serta mengelola proyek dengan Git/GitHub.
 
+<<<<<<< HEAD
 Target akhir dari praktikum ini adalah menghasilkan proyek P6 yang berjalan dengan baik, memenuhi seluruh ketentuan dalam modul, memiliki dokumentasi yang lengkap, dan tetap terpisah dari proyek P5 sebagai versi sebelumnya.
+=======
+Target akhir dari praktikum ini adalah menghasilkan proyek P6 yang berjalan dengan baik, memenuhi seluruh ketentuan dalam modul, memiliki dokumentasi yang lengkap, dan tetap terpisah dari proyek P5 sebagai versi sebelumnya.
+>>>>>>> 2675667ed68a852afa66e6cc5aa3c736d9f5ce83
