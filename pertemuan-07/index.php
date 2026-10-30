@@ -102,7 +102,7 @@ $nim = "2622500056";
 $namaMahasiswa = "Theresa Alpansi";
 $programStudi = "SI";
 $tahunAkademik = "2026/2027";
-$semester = 1;
+$semester = 2;
 $ipk = 3.75;
 $statusAktif = true;
 $catatanTambahan = null;
@@ -177,7 +177,7 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
         <strong><?= htmlspecialchars(NAMA_MATA_KULIAH, ENT_QUOTES, 'UTF-8') ?></strong>
         pada tahun akademik <?= htmlspecialchars($tahunAkademik, ENT_QUOTES, 'UTF-8') ?>.
     </p>
-    <img src="foto-profil.jpg" alt="Foto profil Theresa Alpansi">
+    <img src="foto-profil.jpeg" alt="Foto profil Theresa Alpansi" />
 </section>
 
 <section id="about">
@@ -243,7 +243,7 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
     <p>
         Kunjungi
         <a target="_blank" rel="noopener noreferrer"
-            href="https://github.com/2622500056-theresa rawurlencode(PROFIL_GITHUB) ?>">
+            href="https://github.com/2622500056-theresa<?= rawurlencode(PROFIL_GITHUB) ?>">
             profil GitHub saya
         </a>.
     </p>
