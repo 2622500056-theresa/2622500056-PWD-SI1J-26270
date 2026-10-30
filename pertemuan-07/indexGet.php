@@ -11,7 +11,7 @@ $nim = "2622500056";
 $namaMahasiswa = "Theresa Alpansi";
 $programStudi = "SI";
 $tahunAkademik = "2026/2027";
-$semester = 1;
+$semester = 2;
 $ipk = 3.75;
 $statusAktif = true;
 $catatanTambahan = null;
@@ -181,7 +181,7 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/2622500056-theresa PROFIL_GITHUB ?>">profil GitHub saya</a>.
+            href="https://github.com/2622500056-theresa<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
         </p>
 
         <form id="contactForm" action="index.php" method="get" novalidate>
