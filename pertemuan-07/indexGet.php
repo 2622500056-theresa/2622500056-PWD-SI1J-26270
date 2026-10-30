@@ -101,7 +101,7 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
           pada tahun akademik <?= $tahunAkademik ?>.
         </p>
 
-        <img src="foto-profil.jpg" alt="Foto profil Theresa Alpansi" />
+        <img src="foto-profil.jpeg" alt="Foto profil Theresa Alpansi" />
       </section>
 
       <section id="about">
