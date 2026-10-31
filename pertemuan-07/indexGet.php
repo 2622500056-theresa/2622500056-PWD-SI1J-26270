@@ -56,9 +56,9 @@ switch ($programStudi) {
 // Status mahasiswa dengan operator ternary
 $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
 ?>
-
 <!doctype html>
 <html lang="id">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -101,7 +101,8 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
           pada tahun akademik <?= $tahunAkademik ?>.
         </p>
 
-        <img src="foto-profil.jpeg" alt="Foto profil Theresa Alpansi" />
+        <img src="img/foto-profil.jpeg"
+     alt="Foto profil Theresa Alpansi" />
       </section>
 
       <section id="about">
@@ -178,10 +179,10 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
 
         <p>
           Kunjungi
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/2622500056-theresa<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
+          <a target="_blank" rel="noopener noreferrer"
+   href="https://github.com/<?= rawurlencode(PROFIL_GITHUB) ?>">
+   profil GitHub saya
+</a>
         </p>
 
         <form id="contactForm" action="index.php" method="get" novalidate>

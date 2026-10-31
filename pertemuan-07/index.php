@@ -177,7 +177,8 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
         <strong><?= htmlspecialchars(NAMA_MATA_KULIAH, ENT_QUOTES, 'UTF-8') ?></strong>
         pada tahun akademik <?= htmlspecialchars($tahunAkademik, ENT_QUOTES, 'UTF-8') ?>.
     </p>
-    <img src="foto-profil.jpeg" alt="Foto profil Theresa Alpansi" />
+    <img src="img/foto-profil.jpeg"
+     alt="Foto profil Theresa Alpansi" />
 </section>
 
 <section id="about">
@@ -242,10 +243,10 @@ $teksStatus = $statusAktif ? "Aktif" : "Tidak aktif";
 
     <p>
         Kunjungi
-        <a target="_blank" rel="noopener noreferrer"
-            href="https://github.com/2622500056-theresa<?= rawurlencode(PROFIL_GITHUB) ?>">
-            profil GitHub saya
-        </a>.
+       <a target="_blank" rel="noopener noreferrer"
+   href="https://github.com/<?= rawurlencode(PROFIL_GITHUB) ?>">
+   profil GitHub saya
+       </a>
     </p>
 
     <form id="contactForm" action="index.php" method="post" novalidate>
