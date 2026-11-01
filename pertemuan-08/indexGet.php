@@ -1,0 +1,263 @@
+<?php
+// ===== PROSES FORM PENDAFTARAN (METODE GET) =====
+$nama = $email = $gender = $pesan = "";
+$err = ["nama" => "", "email" => "", "gender" => "", "pesan" => ""];
+$sukses = false;
+$halamanAktif = "beranda";
+
+function h($teks)
+{
+  return htmlspecialchars($teks, ENT_QUOTES, "UTF-8");
+}
+
+if (isset($_GET["kirim"])) {
+  $halamanAktif = "pendaftaran";
+  $nama   = trim($_GET["nama"] ?? "");
+  $email  = trim($_GET["email"] ?? "");
+  $gender = $_GET["gender"] ?? "";
+  $pesan  = trim($_GET["pesan"] ?? "");
+
+  if (strlen($nama) < 3) {
+    $err["nama"] = "Nama minimal 3 huruf ya.";
+  }
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $err["email"] = "Format email belum bener nih.";
+  }
+  if (!in_array($gender, ["Pria", "Wanita", "Rahasia"], true)) {
+    $err["gender"] = "Pilih salah satu dulu ya.";
+  }
+  if (strlen($pesan) < 5) {
+    $err["pesan"] = "Pesannya jangan terlalu singkat, minimal 5 karakter.";
+  }
+
+  $sukses = ($err["nama"] === "" && $err["email"] === "" && $err["gender"] === "" && $err["pesan"] === "");
+}
+?>
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dapur Manis Theresa (GET)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="layout">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo" aria-hidden="true">🥐</div>
+      <div>
+        <h1>Dapur Manis Theresa</h1>
+        <p>Cerita seru dari seorang mahasiswa SI</p>
+      </div>
+    </header>
+
+    <!-- NAVIGASI -->
+    <nav class="nav">
+      <ul>
+        <li><a href="#beranda" data-page="beranda" class="<?= $halamanAktif === 'beranda' ? 'active' : '' ?>">🏠 Beranda</a></li>
+        <li><a href="#profile" data-page="profile">👩 Profile</a></li>
+        <li><a href="#pendaftaran" data-page="pendaftaran" class="<?= $halamanAktif === 'pendaftaran' ? 'active' : '' ?>">📝 Pendaftaran</a></li>
+        <li><a href="#resep" data-page="resep">🍪 Catatan Resep</a></li>
+      </ul>
+    </nav>
+
+    <!-- KONTEN -->
+    <main class="konten">
+
+      <!-- BERANDA -->
+      <section id="beranda" class="page <?= $halamanAktif === 'beranda' ? 'active' : '' ?>">
+        <h2>Halo, selamat datang di dapur aku! 👋</h2>
+        <p>
+          Jadi ceritanya, akhir-akhir ini aku lagi sering banget ngabisin waktu luang buat baking.
+          Awalnya cuma iseng nyobain pastry instan yang tinggal oven, eh lama-lama ketagihan.
+          Sekarang tiap ada waktu kosong, ujung-ujungnya aku pasti ada di dapur sambil nyium bau
+          mentega yang lagi dipanggang. Di blog ini aku mau cerita pengalaman aku, termasuk yang gagalnya juga, hehe.
+        </p>
+
+        <div class="floaters" aria-hidden="true">
+          <span>🍩</span><span>🍪</span><span>🥐</span><span>🧁</span>
+        </div>
+
+        <h3>Yang biasa gue bikin</h3>
+        <div class="cards">
+          <article class="card">
+            <div class="emoji">🥐</div>
+            <h4>Pastry Instan</h4>
+            <p>Ini yang paling gampang buat pemula. Tata pastry instan di loyang,
+              tambah toping sesuai selera kamu, lalu oles kuning telur biar mengkilap,
+              terus oven. Hasilnya renyah berlapis-lapis, cocok buat sarapan buru-buru.</p>
+          </article>
+          <article class="card">
+            <div class="emoji">🍩</div>
+            <h4>Donat</h4>
+            <p>Yang ini butuh kesabaran. Adonan harus diistirahatin sampai mengembang. Pertama kali bikin,
+              donat aku keras kaya batu. Sekarang udah empuk dan bisa dikasih topping coklat atau gula halus.</p>
+          </article>
+          <article class="card">
+            <div class="emoji">🍪</div>
+            <h4>Cookie</h4>
+            <p>Favorit aku buat ngemil sambil ngerjain tugas apalagi kalo dicelupin susu. Tekstur luar garing, dalamnya agak chewy.
+              Gue suka nambahin choco chip yang banyak, soalnya kalau pelit rasanya kurang puas.</p>
+          </article>
+        </div>
+
+        <h3>Rekap kegiatan baking gue</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Kue</th>
+                <th>Tingkat Susah</th>
+                <th>Waktu</th>
+                <th>Kata Gue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Pastry instan</td>
+                <td>⭐</td>
+                <td>± 30 menit</td>
+                <td>Aman, anti gagal</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Donat</td>
+                <td>⭐⭐⭐</td>
+                <td>± 2 jam</td>
+                <td>Capek tapi puas</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Cookie</td>
+                <td>⭐⭐</td>
+                <td>± 45 menit</td>
+                <td>Bikin nagih</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Pelajaran yang aku dapet</h3>
+        <p>
+          Baking itu ternyata mirip ngoding: kalau takarannya salah dikit, hasilnya bisa beda jauh.
+          Sama kayak bug, kalau gagal ya dicoba lagi, dicatat apa yang salah, terus diperbaiki.
+          Makanya aku kepikiran bikin catatan resep di menu <b>Catatan Resep</b>.
+        </p>
+      </section>
+
+      <!-- PROFILE -->
+      <section id="profile" class="page">
+        <h2>Profile</h2>
+        <div class="profile-box">
+          <div class="foto-wrap">
+            <img src="foto-profil.jpeg" alt="Foto Theresa Alpansi" id="fotoProfil">
+          </div>
+          <table class="biodata">
+            <tr>
+              <th>Nama</th>
+              <td>Theresa Alpansi</td>
+            </tr>
+            <tr>
+              <th>NIM</th>
+              <td>2622500056</td>
+            </tr>
+            <tr>
+              <th>Prodi</th>
+              <td>SI (Sistem Informasi)</td>
+            </tr>
+            <tr>
+              <th>Semester</th>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th>Tanggal Lahir</th>
+              <td>30 Mei 2007</td>
+            </tr>
+            <tr>
+              <th>Hobi</th>
+              <td>Baking &amp; memasak</td>
+            </tr>
+            <tr>
+              <th>Link GitHub</th>
+              <td><a href="https://github.com/2622500056-theresa" target="_blank" rel="noopener">2622500056-theresa</a></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- PENDAFTARAN (METODE GET) -->
+      <section id="pendaftaran" class="page <?= $halamanAktif === 'pendaftaran' ? 'active' : '' ?>">
+        <h2>Pendaftaran</h2>
+        <p>Mau ikut komunitas baking atau sekadar nyapa? Isi form ini ya!</p>
+
+        <?php if ($sukses): ?>
+          <div id="hasil" class="hasil">
+            <b>Makasih, <?= h($nama) ?>! 🎉</b>
+            <p>Data kamu udah masuk (dikirim lewat metode GET):</p>
+            <table class="biodata">
+              <tr><th>Nama</th><td><?= h($nama) ?></td></tr>
+              <tr><th>Email</th><td><?= h($email) ?></td></tr>
+              <tr><th>Jenis Kelamin</th><td><?= h($gender) ?></td></tr>
+              <tr><th>Pesan</th><td><?= nl2br(h($pesan)) ?></td></tr>
+            </table>
+          </div>
+        <?php endif; ?>
+
+        <form id="formDaftar" action="indexGet.php" method="get" novalidate>
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama" placeholder="Nama lengkap kamu" value="<?= $sukses ? '' : h($nama) ?>">
+          <small class="error" id="errNama"><?= h($err["nama"]) ?></small>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="contoh@email.com" value="<?= $sukses ? '' : h($email) ?>">
+          <small class="error" id="errEmail"><?= h($err["email"]) ?></small>
+
+          <label>Jenis Kelamin</label>
+          <div class="radio-group">
+            <label><input type="radio" name="gender" value="Pria" <?= (!$sukses && $gender === 'Pria') ? 'checked' : '' ?>> Pria</label>
+            <label><input type="radio" name="gender" value="Wanita" <?= (!$sukses && $gender === 'Wanita') ? 'checked' : '' ?>> Wanita</label>
+            <label><input type="radio" name="gender" value="Rahasia" <?= (!$sukses && $gender === 'Rahasia') ? 'checked' : '' ?>> Rahasia</label>
+          </div>
+          <small class="error" id="errGender"><?= h($err["gender"]) ?></small>
+
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan atau kesan kamu..."><?= $sukses ? '' : h($pesan) ?></textarea>
+          <small class="error" id="errPesan"><?= h($err["pesan"]) ?></small>
+
+          <div class="btns">
+            <button type="submit" name="kirim" value="1">Kirim</button>
+            <button type="reset" class="sekunder">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- MENU TAMBAHAN: CATATAN RESEP -->
+      <section id="resep" class="page">
+        <h2>Catatan Resep</h2>
+        <p>Klik salah satu kue buat lihat catatan singkat dari gue.</p>
+        <div class="tabs">
+          <button type="button" class="tab-btn active" data-resep="pastry">Pastry</button>
+          <button type="button" class="tab-btn" data-resep="donat">Donat</button>
+          <button type="button" class="tab-btn" data-resep="cookie">Cookie</button>
+        </div>
+        <div id="isiResep" class="isi-resep"></div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy;2622500056_Theresa Alpansi_SI1J_UTS Pemrograman Web Dasar</p>
+    </footer>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

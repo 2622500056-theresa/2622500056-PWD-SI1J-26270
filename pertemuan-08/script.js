@@ -19,23 +19,29 @@ linkNav.forEach(function (a) {
   });
 });
 
-// buka halaman sesuai hash di URL (kalau ada)
+// kalau di URL ada #hash, buka halaman itu
+// (kalau tidak ada, halaman aktif ditentukan oleh PHP)
 const hashAwal = location.hash.replace("#", "");
 if (hashAwal && document.getElementById(hashAwal)) {
   tampilkanHalaman(hashAwal);
 }
 
 // ===== FORM PENDAFTARAN =====
+// JavaScript cuma cek di sisi browser. Kalau data sudah benar,
+// form dikirim ke PHP (index.php / indexGet.php) untuk diproses di server.
 const form = document.getElementById("formDaftar");
-const kotakHasil = document.getElementById("hasil");
 
 function setError(idError, pesan) {
   document.getElementById(idError).textContent = pesan;
 }
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+function bersihkanError() {
+  ["errNama", "errEmail", "errGender", "errPesan"].forEach(function (id) {
+    setError(id, "");
+  });
+}
 
+form.addEventListener("submit", function (e) {
   const nama = document.getElementById("nama").value.trim();
   const email = document.getElementById("email").value.trim();
   const pesan = document.getElementById("pesan").value.trim();
@@ -43,10 +49,7 @@ form.addEventListener("submit", function (e) {
   const polaEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let valid = true;
 
-  setError("errNama", "");
-  setError("errEmail", "");
-  setError("errGender", "");
-  setError("errPesan", "");
+  bersihkanError();
 
   if (nama.length < 3) {
     setError("errNama", "Nama minimal 3 huruf ya.");
@@ -64,31 +67,22 @@ form.addEventListener("submit", function (e) {
     setError("errPesan", "Pesannya jangan terlalu singkat, minimal 5 karakter.");
     valid = false;
   }
-  if (!valid) return;
 
-  kotakHasil.hidden = false;
-  kotakHasil.innerHTML =
-    "<b>Makasih, " + escapeHtml(nama) + "! 🎉</b><br>" +
-    "Data kamu udah masuk:<br>" +
-    "Email: " + escapeHtml(email) + "<br>" +
-    "Jenis kelamin: " + gender.value + "<br>" +
-    "Pesan: " + escapeHtml(pesan);
-  form.reset();
+  // kalau ada yang salah, batalkan pengiriman. Kalau benar, lanjut ke PHP.
+  if (!valid) e.preventDefault();
 });
 
-form.addEventListener("reset", function () {
-  kotakHasil.hidden = true;
-  ["errNama", "errEmail", "errGender", "errPesan"].forEach(function (id) {
-    setError(id, "");
+// tombol Reset: kosongkan semua isian (termasuk yang diisi ulang oleh PHP)
+form.addEventListener("reset", function (e) {
+  e.preventDefault();
+  form.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach(function (el) {
+    el.value = "";
   });
+  form.querySelectorAll('input[type="radio"]').forEach(function (el) {
+    el.checked = false;
+  });
+  bersihkanError();
 });
-
-// biar input user nggak dianggap kode HTML
-function escapeHtml(teks) {
-  const div = document.createElement("div");
-  div.textContent = teks;
-  return div.innerHTML;
-}
 
 // ===== TAB CATATAN RESEP =====
 const dataResep = {

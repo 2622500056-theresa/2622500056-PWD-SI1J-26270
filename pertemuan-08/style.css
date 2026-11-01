@@ -235,16 +235,14 @@ tbody tr:hover {
   border-radius: 16px;
   overflow: hidden;
   background: var(--pink);
-  display: grid;
-  place-items: center;
   border: 4px solid var(--coklat-muda);
-  font-size: 4rem;
 }
 
 .foto-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .biodata {
@@ -333,12 +331,18 @@ button.sekunder {
   color: var(--coklat);
 }
 
+/* hasil pendaftaran (dari PHP) */
 .hasil {
-  margin-top: 18px;
+  margin: 14px 0 18px;
   padding: 16px;
   background: #eaf8ea;
   border-left: 6px solid #4caf50;
   border-radius: 10px;
+}
+
+.hasil .biodata {
+  margin-top: 8px;
+  background: var(--putih);
 }
 
 /* tab resep */
