@@ -156,7 +156,8 @@ if (isset($_GET["kirim"])) {
         <h2>Profile</h2>
         <div class="profile-box">
           <div class="foto-wrap">
-            <img src="foto-profil.jpeg" alt="Foto Theresa Alpansi" id="fotoProfil">
+              <img src="img/foto-profil.jpeg"
+     alt="Foto profil Theresa Alpansi" />
           </div>
           <table class="biodata">
             <tr>
