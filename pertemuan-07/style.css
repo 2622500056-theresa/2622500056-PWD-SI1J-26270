@@ -12,10 +12,10 @@ body {
 
 /* Header */
 header {
-  background-color: #003366;
-  color: #ffffff;
   padding: 20px;
   margin-bottom: 20px;
+  color: #ffffff;
+  background-color: #003366;
   border: 1px solid #00264d;
 }
 
@@ -30,26 +30,6 @@ header h1 {
   align-items: center;
 }
 
-#navMenu {
-  display: none;
-}
-
-#navMenu.nav-open {
-  display: flex;
-  flex-direction: column;
-  margin-top: 16px;
-}
-
-.nav-toggle {
-  display: block;
-  border: none;
-  background: transparent;
-  color: #ffffff;
-  font-size: 1.8rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
 /* Navigasi */
 nav ul {
   display: flex;
@@ -62,10 +42,30 @@ nav ul {
   list-style: none;
 }
 
+#navMenu {
+  display: none;
+}
+
+#navMenu.nav-open {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
 nav a {
   color: #ffffff;
   font-weight: bold;
   text-decoration: none;
+}
+
+.nav-toggle {
+  display: block;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 /* Layout utama */
@@ -79,25 +79,27 @@ section {
   width: 100%;
 }
 
-/* Bagian Home */
+/* Bagian Beranda */
 #home {
-  background-color: #ffffff;
-  border: 1px solid #d0d7de;
   padding: 20px;
   margin: 0;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
 }
 
-#home h2 {
-  color: #003366;
-  border-bottom: 2px solid #003366;
+#home h2,
+#about h2,
+#contact h2 {
   padding-bottom: 6px;
   margin-top: 0;
   margin-bottom: 16px;
+  color: #003366;
+  border-bottom: 2px solid #003366;
 }
 
 #home p {
-  line-height: 1.6;
   margin: 0 0 16px;
+  line-height: 1.6;
 }
 
 #home img {
@@ -110,57 +112,51 @@ section {
 
 /* Bagian Tentang */
 #about {
-  background-color: #ffffff;
-  border: 1px solid #d0d7de;
   padding: 20px;
   margin: 0;
-}
-
-#about h2 {
-  color: #003366;
-  border-bottom: 2px solid #003366;
-  padding-bottom: 6px;
-  margin-top: 0;
-  margin-bottom: 16px;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
 }
 
 #about h3 {
-  color: #1f4e78;
   margin-bottom: 6px;
+  color: #1f4e78;
 }
 
 #about p {
-  margin: 6px 0;
   padding: 6px 0;
-  border-bottom: 1px solid #e6e6e6;
+  margin: 6px 0;
   line-height: 1.5;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 #about ol {
-  color: #333333;
-  margin: 8px 0;
   padding: 8px 24px;
+  margin: 8px 0;
+  color: #333333;
   border: 1px solid #e6e6e6;
 }
 
 /* Bagian Kontak */
 #contact {
-  background-color: #f8fafc;
-  border: 1px solid #cbd5e1;
   padding: 20px;
   margin: 0;
-}
-
-#contact h2 {
-  color: #003366;
-  border-bottom: 2px solid #003366;
-  padding-bottom: 6px;
-  margin-top: 0;
-  margin-bottom: 16px;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
 }
 
 .form-group {
   margin: 12px 0;
+}
+
+fieldset.form-group {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+}
+
+fieldset legend {
+  padding: 0 6px;
+  font-weight: bold;
 }
 
 #contact label {
@@ -171,13 +167,13 @@ section {
 .input-form {
   width: 100%;
   max-width: 100%;
-  background-color: #ffffff;
-  color: #111827;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
   padding: 8px;
   margin: 4px 0;
+  color: #111827;
+  background-color: #ffffff;
   border: 1px solid #94a3b8;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
 }
 
 #contact textarea {
@@ -186,27 +182,21 @@ section {
 }
 
 #contact button {
-  background-color: #003366;
-  color: #ffffff;
-  font-weight: bold;
   padding: 8px 14px;
   margin: 8px 6px 0 0;
+  color: #ffffff;
+  background-color: #003366;
   border: 1px solid #003366;
+  font-weight: bold;
   cursor: pointer;
 }
 
-/* Footer */
-footer {
-  background-color: #003366;
-  color: #ffffff;
-  text-align: center;
-  padding: 14px 20px;
-  margin-top: 20px;
-  border: 1px solid #00264d;
+#contact button:hover {
+  background-color: #1f4e78;
 }
 
-footer p {
-  margin: 0;
+#formFeedback {
+  min-height: 1.5em;
 }
 
 .form-feedback-error {
@@ -217,7 +207,21 @@ footer p {
   color: #2e7d32;
 }
 
-/* Layout untuk viewport yang lebih lebar */
+/* Footer */
+footer {
+  padding: 14px 20px;
+  margin-top: 20px;
+  color: #ffffff;
+  background-color: #003366;
+  border: 1px solid #00264d;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Tampilan layar yang lebih lebar */
 @media (min-width: 768px) {
   nav {
     margin-top: 16px;
@@ -230,14 +234,6 @@ footer p {
     gap: 16px;
   }
 
-  main {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  #contact {
-    grid-column: 1 / -1;
-  }
-
   #navMenu {
     display: flex;
     flex-direction: row;
@@ -245,5 +241,13 @@ footer p {
 
   .nav-toggle {
     display: none;
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #contact {
+    grid-column: 1 / -1;
   }
 }
