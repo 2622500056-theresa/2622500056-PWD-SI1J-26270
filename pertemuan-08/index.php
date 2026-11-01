@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 // ===== PROSES FORM PENDAFTARAN (METODE POST) =====
 $nama = $email = $gender = $pesan = "";
 $err = ["nama" => "", "email" => "", "gender" => "", "pesan" => ""];
