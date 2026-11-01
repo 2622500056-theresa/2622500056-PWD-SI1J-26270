@@ -1,14 +1,15 @@
-/* Tampilan dasar */
+/* Pengaturan dasar */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #fff9f2;
-  color: #503b30;
+  background-color: #fffaf5;
+  color: #50372f;
   line-height: 1.7;
 }
 
@@ -18,377 +19,399 @@ img {
   object-fit: cover;
 }
 
-h1,
-h2,
-h3 {
-  font-family: Georgia, serif;
-  line-height: 1.3;
-}
-
-h2 {
-  color: #79513d;
+a {
+  text-decoration: none;
 }
 
 /* Header */
 header {
-  background-color: #8b6249;
-  color: white;
-  text-align: center;
-  padding: 25px 15px;
-}
-
-.logo {
-  font-family: Georgia, serif;
-  font-size: 27px;
-  font-weight: bold;
-}
-
-header p {
-  margin-bottom: 0;
-  font-size: 14px;
-}
-
-/* Navigasi */
-nav {
-  background-color: #f1dfcf;
-  padding: 14px;
-  text-align: center;
+  background-color: #fffaf5;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
   position: sticky;
   top: 0;
   z-index: 10;
+  box-shadow: 0 2px 10px rgba(80, 55, 47, 0.08);
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: bold;
+  color: #a85d54;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 nav a {
-  display: inline-block;
-  margin: 0 12px;
-  color: #684631;
-  text-decoration: none;
+  color: #50372f;
   font-size: 14px;
-  font-weight: bold;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  color: #c27683;
-}
-
-/* Bagian umum */
-section {
-  padding: 65px 8%;
-  scroll-margin-top: 65px;
-}
-
-.label {
-  color: #c27683;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.judul-section {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 35px;
-}
-
-.judul-section h2 {
-  font-size: 32px;
-  margin: 8px 0;
-}
-
-.judul-section>p:last-child {
-  color: #827168;
-  font-size: 14px;
+  color: #d77986;
 }
 
 /* Beranda */
-.beranda {
+.hero {
+  min-height: 520px;
+  padding: 70px 10%;
   display: flex;
   align-items: center;
-  gap: 45px;
-  min-height: 450px;
+  justify-content: space-between;
+  gap: 50px;
+  background-color: #f9e8df;
 }
 
-.teks-beranda,
-.gambar-beranda {
+.hero-text {
   flex: 1;
 }
 
-.teks-beranda h1 {
-  font-size: 42px;
-  color: #79513d;
-  margin: 12px 0;
+.subtitle {
+  color: #c2787d;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
 }
 
-.teks-beranda>p:not(.label) {
-  color: #76665c;
-  font-size: 14px;
+.hero h1 {
+  font-size: 46px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #70483e;
 }
 
-.gambar-beranda img {
-  height: 340px;
-  border-radius: 100px 100px 12px 12px;
+.hero-text>p:not(.subtitle) {
+  max-width: 500px;
+  margin-bottom: 25px;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 450px;
+}
+
+.hero-image img {
+  height: 350px;
+  border-radius: 45% 45% 15px 15px;
+  box-shadow: 12px 12px 0 #e7c0b5;
 }
 
 /* Tombol */
-.tombol {
+.button {
   display: inline-block;
-  margin-top: 15px;
-  padding: 11px 20px;
-  background-color: #8b6249;
-  color: white;
   border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 13px;
+  border-radius: 25px;
+  padding: 12px 25px;
+  background-color: #b86f70;
+  color: white;
+  font-size: 15px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.tombol:hover {
-  background-color: #c27683;
+.button:hover {
+  background-color: #965457;
+  transform: translateY(-2px);
 }
 
-/* Kartu kegiatan */
-#kegiatan {
-  background-color: #f7eae0;
+/* Judul bagian */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.daftar-kue {
+.section-title h2 {
+  color: #70483e;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* Aktivitas */
+.activities {
+  padding: 80px 10%;
+}
+
+.card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.kartu {
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px #79513d12;
-}
-
-.kartu img {
-  height: 210px;
-}
-
-.isi-kartu {
-  padding: 18px;
-}
-
-.isi-kartu h3 {
-  color: #79513d;
-  margin-top: 0;
-}
-
-.isi-kartu p {
-  color: #76665c;
-  font-size: 13px;
-}
-
-/* Cerita baking */
-.cerita {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.gambar-cerita,
-.cerita>div:last-child {
-  flex: 1;
-}
-
-.gambar-cerita img {
-  height: 350px;
-  border-radius: 10px;
-}
-
-.cerita p {
-  font-size: 14px;
-  color: #76665c;
-}
-
-.daftar-langkah {
-  list-style: none;
-  padding: 0;
-  font-size: 13px;
-}
-
-/* Profil */
-.profil {
-  background-color: #f7eae0;
-}
-
-.biodata {
-  max-width: 800px;
-  margin: auto;
-  padding: 30px;
-  background-color: white;
-  border-radius: 12px;
-  display: flex;
-  align-items: flex-start;
   gap: 25px;
 }
 
-.ikon-profil {
-  background-color: #f7eae0;
-  min-width: 95px;
-  height: 95px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 45px;
+.card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(80, 55, 47, 0.09);
+  transition: 0.3s;
 }
 
-.detail-profil {
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.card img {
+  height: 230px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  color: #a85d54;
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+/* Cerita */
+.story {
+  padding: 80px 10%;
+  background-color: #f9e8df;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.story-image,
+.story-text {
   flex: 1;
 }
 
-.detail-profil h3 {
-  color: #79513d;
-  font-size: 24px;
-  margin-top: 0;
+.story-image img {
+  height: 380px;
+  border-radius: 15px;
 }
 
-.detail-profil>p {
-  color: #76665c;
-  font-size: 14px;
+.story-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 13px;
+.story-text p:not(.subtitle) {
+  margin-bottom: 15px;
 }
 
-td {
-  padding: 9px 5px;
-  border-bottom: 1px solid #eee0d5;
+/* Profil */
+.profile {
+  padding: 80px 10%;
 }
 
-td:first-child {
-  font-weight: bold;
-  width: 40%;
+.profile-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 850px;
+  margin: auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(80, 55, 47, 0.08);
+}
+
+.profile-image {
+  flex: 1;
+  max-width: 300px;
+}
+
+.profile-image img {
+  height: 320px;
+  border-radius: 15px;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h3 {
+  font-size: 27px;
+  color: #a85d54;
+  margin-bottom: 10px;
+}
+
+.profile-description {
+  margin-bottom: 20px;
+}
+
+.biodata p {
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
 }
 
 /* Formulir */
-form {
+.contact {
+  padding: 80px 10%;
+  background-color: #f9e8df;
+}
+
+.contact form {
   max-width: 600px;
   margin: auto;
-  padding: 28px;
+  padding: 35px;
   background-color: white;
-  border: 1px solid #f0dfd1;
-  border-radius: 10px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(80, 55, 47, 0.08);
 }
 
-form label {
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group>label {
   display: block;
-  margin-top: 15px;
-  font-size: 13px;
+  margin-bottom: 8px;
   font-weight: bold;
+  color: #70483e;
 }
 
-form input,
-form select,
-form textarea {
+input[type="text"],
+input[type="email"],
+textarea {
   width: 100%;
-  margin-top: 7px;
-  padding: 12px;
-  border: 1px solid #dfcbbd;
-  border-radius: 5px;
+  padding: 13px;
+  border: 1px solid #e6cfc4;
+  border-radius: 8px;
   background-color: #fffdfb;
   font-family: Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
+  color: #50372f;
 }
 
-form input:focus,
-form select:focus,
-form textarea:focus {
-  outline: 2px solid #e9b9c0;
-  border-color: #c27683;
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #c2787d;
+  box-shadow: 0 0 5px rgba(194, 120, 125, 0.2);
 }
 
-form textarea {
+textarea {
   resize: vertical;
 }
 
-#hasilForm {
-  color: #79513d;
-  font-size: 14px;
-  margin-top: 15px;
+.gender-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gender-options label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.gender-options input {
+  accent-color: #b86f70;
+}
+
+.submit-button {
+  width: 100%;
+}
+
+.success-message {
+  margin-top: 20px;
+  text-align: center;
+  color: #39804b;
+  font-weight: bold;
 }
 
 /* Footer */
 footer {
-  background-color: #79513d;
+  padding: 30px 10%;
+  background-color: #70483e;
   color: white;
   text-align: center;
-  padding: 30px 15px;
 }
 
 footer h3 {
-  margin-top: 0;
+  margin-bottom: 8px;
 }
 
 footer p {
-  font-size: 12px;
-  color: #f5e7dc;
+  font-size: 13px;
+  margin-bottom: 5px;
 }
 
 /* Tampilan HP */
-@media (max-width: 700px) {
-  nav a {
-    margin: 5px 7px;
-    font-size: 12px;
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+    text-align: center;
   }
 
-  section {
-    padding: 45px 6%;
+  nav {
+    justify-content: center;
+    gap: 12px;
   }
 
-  .beranda,
-  .cerita {
+  .hero {
     flex-direction: column;
-    align-items: stretch;
-    gap: 25px;
+    padding: 50px 7%;
+    text-align: center;
   }
 
-  .teks-beranda h1 {
-    font-size: 34px;
+  .hero h1 {
+    font-size: 36px;
   }
 
-  .gambar-beranda img {
-    height: 270px;
-    border-radius: 70px 70px 10px 10px;
+  .hero-image {
+    width: 100%;
   }
 
-  .daftar-kue {
+  .hero-image img {
+    height: 280px;
+  }
+
+  .card-container {
     grid-template-columns: 1fr;
   }
 
-  .kartu img {
-    height: 230px;
-  }
-
-  .gambar-cerita img {
-    height: 270px;
-  }
-
-  .biodata {
+  .story {
     flex-direction: column;
-    padding: 22px;
+    padding: 60px 7%;
   }
 
-  .ikon-profil {
-    width: 85px;
-    min-width: 85px;
-    height: 85px;
+  .story-image {
+    width: 100%;
   }
 
-  .judul-section h2 {
+  .story-image img {
+    height: 280px;
+  }
+
+  .profile-box {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .profile-image {
+    width: 100%;
+  }
+
+  .profile-image img {
+    height: 300px;
+  }
+
+  .profile-info {
+    width: 100%;
+  }
+
+  .section-title h2 {
     font-size: 27px;
   }
 
-  form {
-    padding: 20px;
+  .contact form {
+    padding: 25px 20px;
   }
 }
