@@ -104,4 +104,8 @@ Dari praktik P7 ini, saya mempelajari cara menghubungkan formulir HTML dengan PH
 
 Saya juga mempelajari penggunaan GET, POST, session, validasi formulir, dan pola PRG. Selain itu, saya memahami pentingnya melakukan pengujian sebelum menyatakan program berhasil serta menggunakan Git untuk mencatat perkembangan kode.
 
+<<<<<<< HEAD
 Sebelum proyek dikumpulkan, saya perlu mencocokkan hasil P7 dengan proyek P6 asli, menyelesaikan pengujian melalui localhost, memperbarui dokumentasi berdasarkan hasil yang benar-benar diperoleh, dan memastikan perubahan sudah dikirim ke GitHub.
+=======
+Sebelum proyek dikumpulkan, saya perlu mencocokkan hasil P7 dengan proyek P6 asli, menyelesaikan pengujian melalui localhost, memperbarui dokumentasi berdasarkan hasil yang benar-benar diperoleh, dan memastikan perubahan sudah dikirim ke GitHub.
+>>>>>>> f78dc55def779f7e8068827095339001b6731d72
