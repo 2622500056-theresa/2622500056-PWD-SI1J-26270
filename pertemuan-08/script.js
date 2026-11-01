@@ -25,12 +25,6 @@ if (hashAwal && document.getElementById(hashAwal)) {
   tampilkanHalaman(hashAwal);
 }
 
-// ===== FOTO PROFIL (kalau file foto belum ada, tampilkan emoji) =====
-const foto = document.getElementById("fotoProfil");
-foto.addEventListener("error", function () {
-  foto.parentElement.textContent = "👩‍🍳";
-});
-
 // ===== FORM PENDAFTARAN =====
 const form = document.getElementById("formDaftar");
 const kotakHasil = document.getElementById("hasil");
