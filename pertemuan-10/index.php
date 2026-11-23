@@ -43,7 +43,7 @@ $namaMahasiswa = "Theresa Alpansi";
 $programStudi = "SI";
 $tahunAkademik = "2026/2027";
 $semester = 1;
-$ipk = 0.00;
+$ipk = 4.00;
 $statusAktif = true;
 $catatanTambahan = null;
 const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
@@ -118,7 +118,8 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
     <section id="home">
       <h2>Selamat Datang</h2>
       <p>Halo, saya <?= tebal($namaMahasiswa); ?>. Saya sedang mempelajari matakuliah <strong><?= bersihkan(NAMA_MATA_KULIAH); ?></strong> pada tahun akademik <?= bersihkan($tahunAkademik); ?>.</p>
-      <img src="img/foto-profil.jpg" alt="Foto profil <?= bersihkan($namaMahasiswa); ?>" />
+      <img src="img/foto-profil.jpeg"
+     alt="Foto profil Theresa Alpansi" />
     </section>
 
     <section id="about">
